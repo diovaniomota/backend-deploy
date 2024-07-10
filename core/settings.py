@@ -32,6 +32,8 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 # Allowed hosts for django project
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
                           "127.0.0.1,localhost").split(",")
+CSRF_TRUSTED_ORIGINS = os.getenv("DJANGO_ALLOWED_HOSTS",
+                                 "127.0.0.1,localhost").split(",")
 
 # List of origins that are authorized to make cross-site HTTP requests
 CORS_ALLOWED_ORIGINS = os.getenv(

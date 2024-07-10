@@ -98,8 +98,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASES = {
-    "default": dj_database_url.parse(os.getenv("DATABASE_URL", "mysql://root:@127.0.0.1:3306/curso_grftalk_base?charset=utf8mb4")),
+DATABASES = {}
+
+DATABASES['default'] = dj_database_url.parse(
+    os.getenv(
+        "DATABASE_URL",
+        "mysql://root:@127.0.0.1:3306/curso_grftalk_base"
+    )
+)
+
+DATABASES['default']['OPTIONS'] = {
+    'charset': 'utf8mb4'
 }
 
 # Password validation

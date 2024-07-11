@@ -40,6 +40,10 @@ CSRF_TRUSTED_ORIGINS = os.getenv("CURRENT_URL",
 CORS_ALLOWED_ORIGINS = os.getenv(
     "CORS_ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 
+# Allow all origins by default
+if not os.getenv("CORS_ALLOWED_ORIGINS"):
+    CORS_ALLOW_ALL_ORIGINS = True
+
 # Current URL of the app (e.g. http://127.0.0.1:8080)
 CURRENT_URL = os.getenv("CURRENT_URL", "http://127.0.0.1:8080")
 
